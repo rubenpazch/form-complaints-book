@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Contact Form Tutorial by Bootstrapious.com</title>
+    <title>Libro de Reclamaciones</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -46,25 +46,108 @@
                     <div class="controls">
                         <div class="row">
                           <div class="col-md-3">
-                            <input id="datepicker" width="276"  />
-                          </div>
-                        </div>   
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+                            
+                            <div class="form-group">
+                                <label for="form_name">Fecha *</label>
+                                <!--<input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">-->
+                                <input id="datepicker" width="276" placeholder="Ingresa una fecha de la queja" required="required" data-error="La fecha es requerida."/>
+                                <div class="help-block with-errors"></div>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                        </div>  
+                        <div>
+                            <br/>
+                                <h5>
+                                    1. IDENTIFICACIÓN DEL USUARIO O TERCERO LEGITIMADO (RECLAMANTE)
+                                </h5>
+                            <br/>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                    <label for="form_name">Tipo de Reclamante: </label>
+                                    <br/>
+                                    <!--<input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">-->
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Paciente (Usuario Afectado)</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Representante o si el paciente es menor de edad</label>
+                                      </div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
+                        <br/>
+                        <div class="row">                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Nombre</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Ingresa tu nombre *" required="required" data-error="El nombre es obligatorio.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Apellidos</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Ingresa tu apellido *" required="required" data-error="El apellido es obligatorio.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="Row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_name">Tipo de Documento</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                        DNI
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                        CARNET DE EXTRANJERIA
+                                        </label>
+                                    </div>
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                        PASAPORTE
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                        RUC
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Nº de Documento:</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Ingresa el número *" required="required" data-error="El numero de documento es obligatorio.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <br/>
+                                <h5>
+                                    DATOS DOMICILIARIOS
+                                </h5>
+                            <br/>
+                        </div> 
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
