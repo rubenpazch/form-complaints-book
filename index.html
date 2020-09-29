@@ -58,7 +58,7 @@
                         <div>
                             <br/>
                                 <h5>
-                                    1. IDENTIFICACIÓN DEL USUARIO O TERCERO LEGITIMADO (RECLAMANTE)
+                                    <strong>  1. IDENTIFICACIÓN DEL USUARIO O TERCERO LEGITIMADO (RECLAMANTE)</strong>
                                 </h5>
                             <br/>
                         </div> 
@@ -133,8 +133,8 @@
                         <div class="row">                            
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_name">Nº de Documento:</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Ingresa el número *" required="required" data-error="El numero de documento es obligatorio.">
+                                    <label for="form_nrodocumento">Nº de Documento:</label>
+                                    <input id="form_nrodocumento" type="text" name="nrodocumento" class="form-control" placeholder="Ingresa el número *" required="required" data-error="El numero de documento es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -147,40 +147,68 @@
                                 </h5>
                             <br/>
                         </div> 
-
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="row">                            
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_need">Please specify your need *</label>
-                                    <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-                                        <option value=""></option>
-                                        <option value="Request quotation">Request quotation</option>
-                                        <option value="Request order status">Request order status</option>
-                                        <option value="Request copy of an invoice">Request copy of an invoice</option>
-                                        <option value="Other">Other</option>
-                                    </select>
+                                    <label for="form_direccion">Dirección:</label>
+                                    <input id="form_direccion" type="text" name="direccion" class="form-control" placeholder="Dirección *" required="required" data-error="La dirección es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row">                            
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="form_message">Message *</label>
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                    <label for="form_distrito">Distrito, Provincia, Departamento / País (en caso de ser extranjero) :</label>
+                                    <input id="form_distrito" type="text" name="distrito" class="form-control" placeholder="Distrito, Provincia, Departamento / País *" required="required" data-error="El distriro/ provincia/ departamento es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn btn-success btn-send" value="Send message">
+                        </div>
+                        <div class="row">                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email:</label>
+                                    <input id="form_email" type="text" name="email" class="form-control" placeholder="Ingresa tu email *" required="required" data-error="El email es obligatorio.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_telefono">Teléfono:</label>
+                                    <input id="form_telefono" type="text" name="telefono" class="form-control" placeholder="Ingresa tu teléfono *" required="required" data-error="El teléfono es obligatorio.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <br/>
+                                <h5>
+                                    <strong>2. DETALLES DEL RECLAMO</strong> 
+                                </h5>
+                            <br/>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_mensaje">Reclamo del usuario afectado *</label>
+                                    <textarea id="form_mensaje" name="mensaje" class="form-control" placeholder="Detalla el reclamo *" rows="4" required="required" data-error="Los detalle del reclamo es obligatorio."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br/>
+                                <h5>
+                                    <strong>3. ESTOY DE ACUERDO CON LO INGRESADO EN ESTA HOJA DE RECLAMACIONES Y ASÍ MISMO CONFIRMO QUE LOS DATOS SON TOMADOS COMO FIRMA DE ESTA SOLICITUD</strong> 
+                                </h5>
+                            <br/>
+                        </div> 
+
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success btn-send" value="Enviar">
                         </div>
                         <div class="row">
                             <div class="col-md-12">
