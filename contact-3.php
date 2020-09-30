@@ -16,7 +16,7 @@ $fromName = 'Demo contact form';
 
 // an email address that will receive the email with the output of the form
 $sendToEmail = 'khuillca@hospitalantoniolorena.gob.pe';
-$sendToName = 'Katerine Huillca';
+$sendToName = 'Demo contact form';
 
 // subject of the email
 $subject = 'Reclamo registrado por el usuario ';
