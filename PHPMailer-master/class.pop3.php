@@ -41,7 +41,7 @@ class POP3
      * @var integer
      * @access public
      */
-    public $POP3_PORT = 110;
+    public $POP3_PORT = 995;
 
     /**
      * Default timeout in seconds.

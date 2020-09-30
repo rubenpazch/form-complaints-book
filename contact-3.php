@@ -11,31 +11,31 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 */
 
 // an email address that will be in the From field of the email.
-$fromEmail = 'demo@domain.com';
+$fromEmail = 'rubenpazchuspe@outlook.com';
 $fromName = 'Demo contact form';
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'demo@domain.com';
-$sendToName = 'Demo contact form';
+$sendToEmail = 'khuillca@hospitalantoniolorena.gob.pe';
+$sendToName = 'Katerine Huillca';
 
 // subject of the email
-$subject = 'New message from contact form';
+$subject = 'Reclamo registrado por el usuario ';
 
 // smtp credentials and server
 
-$smtpHost = 'smtp.domain.com';
-$smtpUsername = 'hello@domain.com';
-$smtpPassword = 'PASSWORD';
+$smtpHost = 'smtp.hospitalantoniolorena.gob.pe';
+$smtpUsername = 'khuillca@hospitalantoniolorena.gob.pe';
+$smtpPassword = 'Ftp2019@12345.';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message');
+$fields = array('fechareclamo' => 'FechaReclamo','name' => 'Name', 'surname' => 'Surname', 'telefono' => 'Telefono', 'email' => 'Email', 'mensaje' => 'Mensaje');
 
 // message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
+$okMessage = 'El reclamo fue registrado correctamente';
 
 // If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+$errorMessage = 'Se produjo un error en el registro del reclamo.';
 
 /*
 *  LET'S DO THE SENDING
@@ -46,20 +46,24 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try {
     if (count($_POST) == 0) {
-        throw new \Exception('Form is empty');
+        throw new \Exception('El formulario esta vacio');
     }
     
-    $emailTextHtml = "<h1>You have a new message from your contact form</h1><hr>";
+    $emailTextHtml = "<h1> ¡Se ha registrado un nuevo reclamo!</h1><hr>";
     $emailTextHtml .= "<table>";
     
     foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
         if (isset($fields[$key])) {
+            if ($fields[$key] == "Email") {
+                $fromEmail = $value;
+            }
+
             $emailTextHtml .= "<tr><th>$fields[$key]</th><td>$value</td></tr>";
         }
     }
     $emailTextHtml .= "</table><hr>";
-    $emailTextHtml .= "<p>Have a nice day,<br>Best,<br>Ondrej</p>";
+    $emailTextHtml .= "<p>Hospital Antonio Lorena del Cusco,<br>Al servicio de la población</p>";
     
     $mail = new PHPMailer;
     
@@ -99,7 +103,7 @@ try {
     $mail->SMTPAuth = true;
     
     //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = $smtpHost;
+    $mail->Username = $smtpUsername;
     
     //Password to use for SMTP authentication
     $mail->Password = $smtpPassword;
