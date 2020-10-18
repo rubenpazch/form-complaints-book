@@ -4,57 +4,47 @@
     <title>Libro de Reclamaciones</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" >
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css">
+    <link rel="stylesheet" href="./css/gijgo.min.css">
     <link href='custom.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">    
+    
 </head>
-
 <body>
-
     <div class="container mainWrapper">
-
         <div class="row contentWrapper">
-
             <div class="col-xl-8 offset-xl-2 py-5">
                 <div class="subtitleHeader">
                     <h2>Libro de Reclamaciones Virtual</h2>
                 </div>
-                
                 <div class="imagesHeader">
                     <img  src="./img/logo.png" width="170px"/>
                     <img  src="./img/PCM-Salud.png" width="180px"/>
                     <img  src="./img/Superintendencia_Nacional_de_Salud_de_Perú.png" width="180px"/>
                 </div>
-
                 <div class="titleHeader">
                     <h1>Hospital Antonio Lorena del Cusco</h1>
                 </div>
-                
-
                 <p class="lead">
                     RUC: 20527287112<br/>
                     Razón Social: Unidad Ejecutora Hospital Antonio Lorena
                 </p>
-                
-
-
                 <form id="contact-form" method="post" action="contact.php" role="form">
 
                     <div class="messages"></div>
 
                     <div class="controls">
-                        <div class="row">
-                          <div class="col-md-3">
-                            
-                            <div class="form-group">
-                                <label for="form_fechareclamo">Fecha *</label>
-                                <!--<input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">-->
-                                <input id="form_fechareclamo" name="fechareclamo" width="276" placeholder="Ingresa una fecha de la queja" required="required" data-error="La fecha es requerida."/>
-                                <div class="help-block with-errors"></div>
+                        <div class='col-sm-6'>
+                            <div id="datepicker"></div>
+                            <div id="datos">
+                                <label for='fecha'>Fecha:</label>
+                                <!-- Campo de texto que recibira el valor seleccionado en el datepicker 
+                                le he puesto el atributo readonly para no poder escribir directamente -->
+                                <input type='text' name='fecha' id='fecha' readonly />
                             </div>
-                          </div>
-                        </div>  
+                         </div> 
                         <div>
                             <br/>
                                 <h5>
@@ -206,7 +196,33 @@
                                 </h5>
                             <br/>
                         </div> 
-
+                        <div class="row">                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_distrito">Autorizo Notificación del Resultado al Email consignado :</label>
+                                    <br/>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Si</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">No</label>
+                                      </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <ul>
+                                        <li class="py-2">El Hospital Antonio Lorena del Cusco, se reserva el derecho de tomar acciones legales pertinentes en caso de verificarse la falsedad o inexactitud de las declaraciones realizadas.</li>
+                                        <li>Las IAFAS, IPRESS O UGIPRESS deben atender el reclamo en un plazo de 30 días hábiles. "De no encontrarse de acuerdo o disconforme con el resultado de su reclamo, o ante la negativa de atención o irregularidad en su tramitación puede acudir en denuncia ante la Superintendencia Nacional de Salud - SUSALUD; o hacer uso de los mecanismos alternativos de solución de controversias ante el centro de conciliación y arbitraje - CECONAR de SUSALUD".</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <input type="submit" class="btn btn-success btn-send" value="Enviar">
                         </div>
@@ -231,15 +247,17 @@
     <!-- /.container-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/messages/messages.es-es.js" ></script>
 
+    <script src="./js/popper.min.js" ></script>
+    <script src="./js/bootstrap.min.js" ></script>
+    <script src="./js/validator.min.js" ></script>
+    <script src="./js/gijgo.min.js" ></script>
+    <script src="./js/messages.es-es.js" ></script>    
+    <script src="./js/jquery-1.10.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
     <script src="./js/index.js"></script>
-    
     <script src="contact.js"></script>
-</body>
 
+
+</body>
 </html>
