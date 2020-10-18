@@ -33,7 +33,7 @@
                 </p>
                 <form id="contact-form" method="post" action="contact.php" role="form">
 
-                    <div class="messages"></div>
+                    
 
                     <div class="controls">
                         <div class='col-sm-6'>
@@ -42,7 +42,7 @@
                                 <label for='fecha'>Fecha:</label>
                                 <!-- Campo de texto que recibira el valor seleccionado en el datepicker 
                                 le he puesto el atributo readonly para no poder escribir directamente -->
-                                <input type='text' name='fecha' id='fecha' readonly />
+                                <input type='text' name='txtfechareclamo' id='fecha' readonly   required="required" placeholder="Ingresa fecha *" data-error="La fecha de reclamo es obligatorio."/>
                             </div>
                          </div> 
                         <div>
@@ -59,11 +59,11 @@
                                     <br/>
                                     <!--<input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">-->
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="rbopcionTipoReclamo" id="inlineRadio1" value="1"  required="required" checked >
                                         <label class="form-check-label" for="inlineRadio1">Paciente (Usuario Afectado)</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="rbopcionTipoReclamo" id="inlineRadio2" value="2"  required="required" >
                                         <label class="form-check-label" for="inlineRadio2">Representante o si el paciente es menor de edad</label>
                                       </div>
                                     <div class="help-block with-errors"></div>
@@ -75,14 +75,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_name">Nombre</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Ingresa tu nombre *" required="required" data-error="El nombre es obligatorio.">
+                                    <input id="form_name" type="text" name="txtnombre" class="form-control" placeholder="Ingresa tu nombre *" required="required" data-error="El nombre es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_lastname">Apellidos</label>
-                                    <input id="form_lastname" type="text" name="apellidos" class="form-control" placeholder="Ingresa tu apellido *" required="required" data-error="El apellido es obligatorio.">
+                                    <input id="form_lastname" type="text" name="txtapellidos" class="form-control" placeholder="Ingresa tu apellido *" required="required" data-error="El apellido es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -93,25 +93,25 @@
                                 <div class="form-group">
                                     <label for="form_name">Tipo de Documento</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                        <input class="form-check-input" type="radio" name="rbTipoDocumento" id="exampleRadios1" value="1" checked>
                                         <label class="form-check-label" for="exampleRadios1">
                                         DNI
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                        <input class="form-check-input" type="radio" name="rbTipoDocumento" id="exampleRadios2" value="2">
                                         <label class="form-check-label" for="exampleRadios2">
                                         CARNET DE EXTRANJERIA
                                         </label>
                                     </div>
                                     <div class="form-check ">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                        <input class="form-check-input" type="radio" name="rbTipoDocumento" id="exampleRadios3" value="3">
                                         <label class="form-check-label" for="exampleRadios3">
                                         PASAPORTE
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                        <input class="form-check-input" type="radio" name="rbTipoDocumento" id="exampleRadios3" value="4">
                                         <label class="form-check-label" for="exampleRadios3">
                                         RUC
                                         </label>
@@ -141,7 +141,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="form_direccion">Dirección:</label>
-                                    <input id="form_direccion" type="text" name="direccion" class="form-control" placeholder="Dirección *" required="required" data-error="La dirección es obligatorio.">
+                                    <input id="form_direccion" type="text" name="txtdireccion" class="form-control" placeholder="Dirección *" required="required" data-error="La dirección es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="form_distrito">Distrito, Provincia, Departamento / País (en caso de ser extranjero) :</label>
-                                    <input id="form_distrito" type="text" name="distrito" class="form-control" placeholder="Distrito, Provincia, Departamento / País *" required="required" data-error="El distriro/ provincia/ departamento es obligatorio.">
+                                    <input id="form_distrito" type="text" name="txtubigeodistrito" class="form-control" placeholder="Distrito, Provincia, Departamento / País *" required="required" data-error="El distriro/ provincia/ departamento es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -159,14 +159,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_email">Email:</label>
-                                    <input id="form_email" type="text" name="email" class="form-control" placeholder="Ingresa tu email *" required="required" data-error="El email es obligatorio.">
+                                    <input id="form_email" type="text" name="txtemail" class="form-control" placeholder="Ingresa tu email *" required="required" data-error="El email es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_telefono">Teléfono:</label>
-                                    <input id="form_telefono" type="text" name="telefono" class="form-control" placeholder="Ingresa tu teléfono *" required="required" data-error="El teléfono es obligatorio.">
+                                    <input id="form_telefono" type="text" name="txttelefono" class="form-control" placeholder="Ingresa tu teléfono *" required="required" data-error="El teléfono es obligatorio.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="form_mensaje">Reclamo del usuario afectado *</label>
-                                    <textarea id="form_mensaje" name="mensaje" class="form-control" placeholder="Detalla el reclamo *" rows="4" required="required" data-error="Los detalle del reclamo es obligatorio."></textarea>
+                                    <textarea id="form_mensaje" name="txtmensaje" class="form-control" placeholder="Detalla el reclamo *" rows="4" required="required" data-error="Los detalle del reclamo es obligatorio."></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -202,11 +202,11 @@
                                     <label for="form_distrito">Autorizo Notificación del Resultado al Email consignado :</label>
                                     <br/>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="rbAutorizacion" id="inlineRadio1" value="1"  required="required">
                                         <label class="form-check-label" for="inlineRadio1">Si</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="rbAutorizacion" id="inlineRadio2" value="2"  required="required">
                                         <label class="form-check-label" for="inlineRadio2">No</label>
                                       </div>
                                     <div class="help-block with-errors"></div>
@@ -224,30 +224,18 @@
                             </div>
                         </div>
                         <div class="col-md-12">
+                            <div class="messages"></div>
                             <input type="submit" class="btn btn-success btn-send" value="Enviar">
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="text-muted">
-                                    <strong>*</strong> These fields are required. Contact form template by
-                                    <a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form" target="_blank">Bootstrapious</a>.</p>
-                            </div>
-                        </div>
                     </div>
-
                 </form>
-
             </div>
             <!-- /.8 -->
-
         </div>
         <!-- /.row-->
-
     </div>
     <!-- /.container-->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
     <script src="./js/popper.min.js" ></script>
     <script src="./js/bootstrap.min.js" ></script>
     <script src="./js/validator.min.js" ></script>
@@ -257,7 +245,5 @@
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/index.js"></script>
     <script src="contact.js"></script>
-
-
 </body>
 </html>
