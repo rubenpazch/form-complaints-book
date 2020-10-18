@@ -23,9 +23,9 @@ $subject = 'Reclamo registrado por el usuario ';
 
 // smtp credentials and server
 
-$smtpHost = 'smtp.hospitalantoniolorena.gob.pe';
-$smtpUsername = 'khuillca@hospitalantoniolorena.gob.pe';
-$smtpPassword = 'Ftp2019@12345.';
+$smtpHost = 'smtpdelservicioquerecive';
+$smtpUsername = 'correodelrecibidor';
+$smtpPassword = 'passwordelquerecive';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
