@@ -15,7 +15,7 @@ $fromEmail = 'rubenpazchuspe@outlook.com';
 $fromName = '';
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'khuillca@hospitalantoniolorena.gob.pe';
+$sendToEmail = '*************';
 $sendToName = 'Reclamos Hospital Antonio Lorena';
 
 // subject of the email
@@ -23,9 +23,9 @@ $subject = 'Reclamo registrado por el usuario ';
 
 // smtp credentials and server
 
-$smtpHost = 'smtp.hospitalantoniolorena.gob.pe';
-$smtpUsername = 'khuillca@hospitalantoniolorena.gob.pe';
-$smtpPassword = 'Ftp2019@12345.';
+$smtpHost = '*************';
+$smtpUsername = '********';
+$smtpPassword = '*******';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
