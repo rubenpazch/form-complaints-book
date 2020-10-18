@@ -12,11 +12,11 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 
 // an email address that will be in the From field of the email.
 $fromEmail = 'rubenpazchuspe@outlook.com';
-$fromName = 'Demo contact form';
+$fromName = '';
 
 // an email address that will receive the email with the output of the form
 $sendToEmail = 'khuillca@hospitalantoniolorena.gob.pe';
-$sendToName = 'Demo contact form';
+$sendToName = 'Reclamos Hospital Antonio Lorena';
 
 // subject of the email
 $subject = 'Reclamo registrado por el usuario ';
@@ -29,7 +29,19 @@ $smtpPassword = 'Ftp2019@12345.';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('fechareclamo' => 'FechaReclamo','name' => 'Name', 'surname' => 'Surname', 'telefono' => 'Telefono', 'email' => 'Email', 'mensaje' => 'Mensaje');
+$fields = array(
+    'txtfechareclamo' => 'FechaReclamo', 
+    'rbopcionTipoReclamo' => 'Tipo de Reclamante',
+    'txtnombre' => 'Nombre', 
+    'txtapellidos' => 'Apellidos', 
+    'rbTipoDocumento' => 'Tipo de Documento', 
+    'nrodocumento' => 'Nro. Documento', 
+    'txtdireccion' => 'Direccion', 
+    'txtubigeodistrito' => 'Distrito, Provincia, Departamento', 
+    'txtemail' => 'Email', 
+    'txttelefono' => 'Telefono', 
+    'txtmensaje' => 'Mensaje', 
+    'rbAutorizacion' => 'Autorizacion');
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'El reclamo fue registrado correctamente';
@@ -49,7 +61,7 @@ try {
         throw new \Exception('El formulario esta vacio');
     }
     
-    $emailTextHtml = "<h1> ¡Se ha registrado un nuevo reclamo!</h1><hr>";
+    $emailTextHtml = "<h1> Se ha registrado un nuevo reclamo </h1><hr>";
     $emailTextHtml .= "<table>";
     
     foreach ($_POST as $key => $value) {
@@ -58,12 +70,46 @@ try {
             if ($fields[$key] == "Email") {
                 $fromEmail = $value;
             }
+            if ($fields[$key] == "Nombre") {
+                $subject .= " ".$value;
+                $fromName .= " ".$value;
+            }
+            if ($fields[$key] == "Apellidos") {
+                $subject .= " ".$value;
+                $fromName .= " ".$value;
+            }
 
-            $emailTextHtml .= "<tr><th>$fields[$key]</th><td>$value</td></tr>";
+            if ($fields[$key] == "Tipo de Reclamante") {
+                if ($value == 1){
+                    $value = "Paciente (Usuario Afectado)";
+                }else {
+                    $value = "Representante o si el paciente es menor de edad";
+                }
+            }
+            if ($fields[$key] == "Tipo de Documento") {
+                if ($value == 1){
+                    $value = "DNI";
+                }else if ($value == 2){
+                    $value = "CARNET DE EXTRANJERIA";
+                }else if ($value == 3){
+                    $value = "PASAPORTE";
+                }else {
+                    $value = "RUC";
+                }
+            }
+            if ($fields[$key] == "Autorizacion") {
+                if ($value == 1){
+                    $value = "SI";
+                } else {
+                    $value = "NO";
+                }
+            }
+
+            $emailTextHtml .= "<tr><th style='text-align: left;'>$fields[$key]</th><td>$value</td></tr>";
         }
     }
     $emailTextHtml .= "</table><hr>";
-    $emailTextHtml .= "<p>Hospital Antonio Lorena del Cusco,<br>Al servicio de la población</p>";
+    $emailTextHtml .= "Hospital Antonio Lorena del Cusco,<br>Al servicio de la población";
     
     $mail = new PHPMailer;
     
@@ -109,7 +155,7 @@ try {
     $mail->Password = $smtpPassword;
     
     if (!$mail->send()) {
-        throw new \Exception('I could not send the email.' . $mail->ErrorInfo);
+        throw new \Exception('No se pudo enviar en el correo.' . $mail->ErrorInfo);
     }
     
     $responseArray = array('type' => 'success', 'message' => $okMessage);
